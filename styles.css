@@ -85,6 +85,11 @@ body {
   text-align: center;
   }
 
+/* Background for the gallery/countdown section to match the invitation card tone */
+#gallery {
+  background-color: #fdf5f5;
+}
+
 #invitation {
   background-color: #fdf5f5;
   position: relative;
@@ -501,7 +506,7 @@ h2 {
 
 .countdown-label {
   display: block;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   color: #666;
   margin-top: 0.25rem;
 }
@@ -511,6 +516,21 @@ h2 {
   margin-top: 1rem;
   color: #333;
   font-weight: 500;
+}
+
+/* When countdown is placed inside the invitation-style box, make items blend with the card */
+.countdown-content .countdown-item {
+  border: none;
+  padding: 0.6rem 0.8rem;
+  min-width: 70px;
+}
+
+.countdown-content .countdown-value {
+  color: #2c3e50;
+}
+
+.countdown-content .countdown-label {
+  color: #666;
 }
 
 /* Celebration styles shown when countdown ends */
