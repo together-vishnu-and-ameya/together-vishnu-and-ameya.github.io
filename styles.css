@@ -396,6 +396,45 @@ body {
     align-items: center;
     text-align: center;
   }
+
+  /* When countdown sits inside the invitation card on small screens,
+     make items flexible so they never overflow the card */
+  .countdown-content .countdown {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .countdown-content .countdown-item {
+    flex: 1 1 0;
+    min-width: 0; /* allow shrinking below default min-width */
+    padding: 0.35rem 0.45rem;
+  }
+}
+
+/* Extra-small screens: stack countdown into two rows (2 x 2) to avoid overflow */
+@media (max-width: 420px) {
+  .countdown-content .countdown {
+    flex-wrap: wrap;
+    overflow: visible; /* allow items to wrap instead of clipping */
+    gap: 0.4rem;
+    justify-content: center;
+  }
+
+  .countdown-content .countdown-item {
+    flex: 0 0 calc(50% - 0.4rem);
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 0.35rem 0.4rem;
+  }
+
+  .countdown-content .countdown-value {
+    font-size: 1.4rem;
+  }
 }
 
 h2 {
