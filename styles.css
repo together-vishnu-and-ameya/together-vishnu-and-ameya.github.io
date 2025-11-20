@@ -606,11 +606,14 @@ footer {
   .countdown {
     flex-wrap: nowrap;
     -webkit-overflow-scrolling: touch;
-    padding-bottom: 0.5rem;
+    padding: 0 1rem 0.5rem; /* give horizontal padding so items don't touch screen edges */
+    box-sizing: border-box;
   }
 
   .countdown-item {
     padding: 0.3rem 0.4rem;
+    min-width: 44px; /* ensure small min-width on very narrow screens */
+    gap: 0.4rem;
   }
 
   .countdown-value {
