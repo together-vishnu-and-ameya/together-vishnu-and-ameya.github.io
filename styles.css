@@ -472,6 +472,70 @@ h2 {
   padding: 1rem;
 }
 
+/* Countdown styles */
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 1rem 0 0;
+}
+
+.countdown-item {
+  background: #fff4f4; /* light warm background to contrast with page */
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  min-width: 90px;
+  text-align: center;
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+.countdown-value {
+  display: block;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 2.4rem;
+  font-weight: 300;
+  color: #2c3e50; /* dark value for readability on light background */
+}
+
+.countdown-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.25rem;
+}
+
+.countdown-note {
+  text-align: center;
+  margin-top: 1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Celebration styles shown when countdown ends */
+.celebration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 1.25rem;
+}
+
+.celebration-title {
+  font-family: "Great Vibes", cursive;
+  font-size: 2.25rem;
+  color: #e74c3c;
+  margin: 0;
+}
+
+.celebration-sub {
+  font-size: 1rem;
+  color: #444;
+  margin: 0;
+}
+
 .gallery-item img {
   width: 100%;
   height: 250px;
@@ -516,5 +580,40 @@ footer {
 @media only screen and (min-width: 820px) and (max-width: 950px) and (orientation: landscape) {
   .hero-content {
     max-width: 51rem; /* ~816px */
+  }
+}
+
+/* iPhone 14 Pro Max (approx. 932px landscape) - keep countdown on a single row */
+@media only screen and (min-width: 880px) and (max-width: 980px) and (orientation: landscape) {
+  .countdown {
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    gap: 0.6rem;
+  }
+
+  .countdown-item {
+    min-width: 46px;
+    padding: 0.35rem 0.45rem;
+  }
+
+  .countdown-value {
+    font-size: 1.35rem;
+  }
+}
+
+/* Place mobile countdown overrides after the default countdown rules so they actually take effect */
+@media (max-width: 480px) {
+  .countdown {
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.5rem;
+  }
+
+  .countdown-item {
+    padding: 0.3rem 0.4rem;
+  }
+
+  .countdown-value {
+    font-size: 1.2rem;
   }
 }
